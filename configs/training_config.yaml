@@ -1,0 +1,26 @@
+train:
+  run_name: "piap_mamba"
+  epochs: 200
+  batch_size: 32
+  lr: 0.0002
+  clip_value: 2.0
+  w_data: 200
+  w_physics: 1
+  w_distill: 0.8
+  distill: False
+  physics: False
+  use_cond: False
+  seed: 42
+  device: "cuda"
+  patience: 10
+  teacher_model_path: "./models/teacher_model.pt"
+
+model:
+  n_layers: 4
+  dim: 512
+  d_state: 32
+  expand: 2
+  seq_len: 8000
+
+data:
+  data_loc: "./data/eap_iap_data.pkl"

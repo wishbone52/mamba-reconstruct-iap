@@ -1,0 +1,11 @@
+# run logs, data results and saved model ckpt
+runs/
+results/
+models/
+
+# pycache
+__pycache__/
+
+# raw data
+*.pkl
+
