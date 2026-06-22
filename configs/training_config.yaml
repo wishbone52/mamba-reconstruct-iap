@@ -4,11 +4,11 @@ train:
   batch_size: 32
   lr: 0.0002
   clip_value: 2.0
-  w_data: 200
-  w_physics: 1
-  w_distill: 0.8
-  distill: False
-  physics: False
+  w_data: 1
+  w_physics: 0.005
+  w_distill: 0.25
+  distill: True
+  physics: True
   use_cond: False
   seed: 42
   device: "cuda"
