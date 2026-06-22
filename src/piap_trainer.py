@@ -135,11 +135,11 @@ class PIAPMambaTrainer():
                 if self.args.train.physics:
                     dv_out_groud_truth = torch.zeros(pred_intras.shape[0], 7700, device=pred_intras.device)
                     physics_loss = self.mae(pred_dv_out,dv_out_groud_truth)
-                    loss = ( intras_loss * self.args.w_data + physics_loss * self.args.w_physics ) / (self.args.w_data + self.args.w_physics)
+                    loss = intras_loss * self.args.w_data + physics_loss * self.args.w_physics 
                 
                 if self.args.train.distill:
                     distill_loss = self.mae(pred_intras, teacher_pred_intras.detach())
-                    loss = self.args.train.w_distill * loss + (1-self.args.train.w_distill) * distill_loss
+                    loss = loss + self.args.train.w_distill * distill_loss
 
                 self.optimizer.zero_grad()
                 loss.backward()
