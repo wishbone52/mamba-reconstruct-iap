@@ -28,4 +28,4 @@ python scrips/train.py --config 'configs/training_config.yaml'
 ```
 
 ### 📊 Results Visualization
-For results visualization, after evaluation, you can simply call the functions in `src/plotters.py`, such as `plot_samples()`, `act_vs_pred_plot_with_residual()`, to visualize the results.
+For results visualization, after evaluation, you can simply call the functions in `src/plotters.py`, such as `plot_samples()` to visualize the results.
